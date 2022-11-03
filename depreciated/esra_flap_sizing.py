@@ -83,15 +83,15 @@ def calc_g(pre_alt):
 
 
 def determine_apogee(rocket_area, flap_area, mass, burnout_vel, burnout_alt, mach_numbers, cd_values, flap_width):
-    time = 0 # setting time at burnout to 0
-    dt = 0.0001 # time step
+    time = 0  # setting time at burnout to 0
+    dt = 0.0001  # time step
     vel = [burnout_vel]
     apo = [burnout_alt]
     flap_cd = 0.9114346387
 
     # drag forces uses the reference area of the flap - not its actual area. 
-    # we are given it's actual area and it's width, so from that we can calculate it's height.
-    # using trig, we can get it's reference area
+    # we are given its actual area, and it's width, so from that we can calculate its height.
+    # using trig, we can get its reference area
     one_flap_area = flap_area / 4
     flap_height = one_flap_area / flap_width
     one_flap_ref_area = flap_height * math.sin(40 * math.pi / 180) * flap_width
@@ -99,7 +99,7 @@ def determine_apogee(rocket_area, flap_area, mass, burnout_vel, burnout_alt, mac
 
     # at apogee the velocity is zero, so the loop will run until the rocket has reached apogee
     while vel[-1] > 0:
-        rho = calc_rho(apo[-1]+ 1401)
+        rho = calc_rho(apo[-1] + 1401)
         
         g = calc_g(apo[-1])
 
