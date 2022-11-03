@@ -14,4 +14,5 @@ graph TD;
     Coeff_Drag_Lookup-->Physics_Sim;
     Physics_Sim-->Angle_Optimizer;
     Angle_Optimizer-->Main_Algorithm;
+    Flight_Computer-->State_Estimator;
 ```
