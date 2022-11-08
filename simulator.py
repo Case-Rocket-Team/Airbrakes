@@ -83,7 +83,7 @@ def simulation(altitude: float, theta_D: float) -> float:
     return apogee
 
 
-def simulate_step(altitude:float, theta_D: float, t: float) -> float:
+def simulate_step(altitude:float, theta_D: float, t: float, t_step: float) -> float:
     """
     simulates a single step of time
 
