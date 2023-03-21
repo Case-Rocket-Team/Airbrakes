@@ -19,6 +19,7 @@ graph TD;
 
 Using the HiLetgo BTS7960 for now... Here is a description of the current wires and what they mean(kyler here you go sir). M -> Motor. MD -> Motor Driver. T -> teensy. 
 ```mermaid
+graph TD; 
 Red_MD -- PositiveCharge--> Red_M
 Black_MD -- Connects to other motor terminal --> Black_M
 Gray_T_LeftGND -- encoder GND --> Green_M
