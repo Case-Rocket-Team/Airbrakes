@@ -15,3 +15,9 @@ graph TD;
     Main_Algorithm-->Main_Simulation;
     Monte_Carlo-->Main_Simulation;
 ```
+
+
+Using the HiLetgo BTS7960 for now...
+
+Progress on Arduino:
+1. Figured out how to control the motor. Clockwise and CounterClockwise. 
