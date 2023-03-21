@@ -1,19 +1,31 @@
-const int R_EN = 4;
+const int L_PWM = 6;
 const int L_EN = 7;
 const int R_PWM = 3;
-const int L_PWM = 6;
+const int R_EN = 4;
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(R_PWM, OUTPUT);
   pinMode(L_PWM, OUTPUT);
-  pinMode(R_EN, OUTPUT);
+  pinMode(R_PWM, OUTPUT);
   pinMode(L_EN, OUTPUT);
-  digitalWrite(R_EN,LOW);
+  pinMode(R_EN, OUTPUT);
   digitalWrite(L_EN,LOW);
+  digitalWrite(R_EN,LOW);
 }
 void loop() {
-  // put your main code here, to run repeatedly:
+  digitalWrite(L_EN, HIGH);
   digitalWrite(R_EN, HIGH);
+  // Clockwise
+  analogWrite(L_PWM, 50);
+  delay(200);
+  analogWrite(L_PWM, 100);
+  delay(200);
+  analogWrite(L_PWM, 150);
+  delay(200);
+  analogWrite(L_PWM, 200);
+  delay(200);
+  analogWrite(L_PWM, 255);
+  delay(200);
+  analogWrite(L_PWM, 0);
+  // Counterclockwise
   analogWrite(R_PWM, 50);
   delay(200);
   analogWrite(R_PWM, 100);
@@ -25,5 +37,6 @@ void loop() {
   analogWrite(R_PWM, 255);
   delay(200);
   analogWrite(R_PWM, 0);
+  digitalWrite(L_EN, LOW);
   digitalWrite(R_EN, LOW);
 }
