@@ -11,6 +11,7 @@ void setup() {
   digitalWrite(R_EN,LOW);
 }
 
+// This is a loop
 void loop() {
   digitalWrite(L_EN, HIGH);
   digitalWrite(R_EN, HIGH);
