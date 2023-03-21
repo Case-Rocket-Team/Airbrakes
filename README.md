@@ -17,7 +17,19 @@ graph TD;
 ```
 
 
-Using the HiLetgo BTS7960 for now...
-
+Using the HiLetgo BTS7960 for now... Here is a description of the current wires and what they mean(kyler here you go sir). M -> Motor. MD -> Motor Driver. T -> teensy. 
+```mermaid
+graph TD; 
+Red_MD -- PositiveCharge--> Red_M
+Black_MD -- Connects to other motor terminal --> Black_M
+Notyet -- encoder GND --> Green_M
+Notyet -- encoder Vcc --> Blue_M
+Notyet -- encoder A output --> Yellow_M
+Notyet -- encoder B output --> White_M
+```
+Useful links:
+<ol>
+<li>[Documentation from Polulu](https://www.pololu.com/product/4847)</li>
+   </ol>
 Progress on Arduino:
 1. Figured out how to control the motor. Clockwise and CounterClockwise. 
