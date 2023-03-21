@@ -10,6 +10,7 @@ void setup() {
   digitalWrite(L_EN,LOW);
   digitalWrite(R_EN,LOW);
 }
+
 void loop() {
   digitalWrite(L_EN, HIGH);
   digitalWrite(R_EN, HIGH);
