@@ -95,7 +95,7 @@ int main() {
     for (int i = 0; i < q.max_size + 5; i++) {
         enqueue(&q, i + 1);
     }
-    int* data = last_10_values(q);
+    int *data = last_10_values(q);
     read_last_10_values(data);
     print_for_testing(q);
     free(q.arr);
