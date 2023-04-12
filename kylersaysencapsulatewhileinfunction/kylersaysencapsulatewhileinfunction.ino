@@ -4,10 +4,10 @@
 #include <Adafruit_BMP280.h>
 
 //barometer stuff 
-#define BMP_SCK  (13) 
-#define BMP_MISO (12) // SDO
-#define BMP_MOSI (11) // SDI/SDA
-#define BMP_CS   (10)
+#define BMP_SCK  (41) // SCL
+#define BMP_MISO (38) // SDO
+#define BMP_MOSI (40) // SDI/SDA
+#define BMP_CS   (39)
 
 Adafruit_BMP280 bmp(BMP_CS, BMP_MOSI, BMP_MISO,  BMP_SCK);
 
@@ -17,11 +17,14 @@ Adafruit_BMP280 bmp(BMP_CS, BMP_MOSI, BMP_MISO,  BMP_SCK);
 // const int L_EN = 7;
 // const int R_PWM = 3;
 // const int R_EN = 4;
-const int Encoder_A = 8; 
-const int Encoder_B = 9; 
+const int Encoder_A = 23; 
+const int Encoder_B = 22; 
 //pins to breakout board
-const int MOTOR_IN1 = 24; 
-const int MOTOR_IN2 = 25;
+const int MOTOR_IN1 = 20; 
+const int MOTOR_IN2 = 21;
+
+const int SWITCH = 0;
+
 int readValue; 
 
 Encoder encoder(Encoder_A, Encoder_B); 
@@ -35,6 +38,8 @@ void setup() {
   pinMode(MOTOR_IN1, OUTPUT);
   pinMode(MOTOR_IN2, OUTPUT);
   
+  pinMode(SWITCH, INPUT);
+
   // pinMode(R_PWM, OUTPUT);
   // pinMode(L_EN, OUTPUT);
   // pinMode(R_EN, OUTPUT);
@@ -66,6 +71,9 @@ void setup() {
 }
 
 void loop() {
+  while (digitalRead(SWITCH) == LOW) {
+    delay(10);
+  }
   // put your main code here, to run repeatedly:
   WHATITDOBBG(4750); 
 
@@ -128,4 +136,6 @@ void WHATITDOBBG(int range){
     delay(1);
 
   }
+  digitalWrite(MOTOR_IN1, LOW);
+  digitalWrite(MOTOR_IN2, LOW);
 }
